@@ -2,9 +2,9 @@
 Contributors: qodeinteractive
 Tags: variations, variation swatches, woocommerce variations, color variations, product variations
 Requires at least: 6.3
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -144,6 +144,9 @@ Feel free to try out some of our other products:
 9. Variation Swatches Style Options.
 
 == Changelog ==
+
+= 1.0.8 - 29-05-2025 ==
+- Fixed showing multiple alerts when no variation has been checked
 
 = 1.0.7 - 21-01-2025 =
 - Changed the pro plugin URL to point to the WooCommerce marketplace

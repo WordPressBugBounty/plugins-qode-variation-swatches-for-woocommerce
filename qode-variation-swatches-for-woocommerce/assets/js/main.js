@@ -370,7 +370,6 @@
 		},
 		triggerDisableSelect: function ( holder ) {
 			var form = holder.parents( '.variations_form' ).first();
-			form.wc_variation_form();
 
 			form.on(
 				'found_variation',

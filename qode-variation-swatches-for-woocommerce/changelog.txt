@@ -1,5 +1,8 @@
 *** QODE Variation Swatches for WooCommerce Changelog ***
 
+2025-05-29 - version 1.0.8
+* Fixed showing multiple alerts when no variation has been checked
+
 2025-01-21 - version 1.0.7
 * Changed the pro plugin URL to point to the WooCommerce marketplace
 * Fixed problem with 'Show on list' option on attributes

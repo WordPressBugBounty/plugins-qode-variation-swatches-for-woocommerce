@@ -5,11 +5,11 @@ Description: QODE Variation Swatches for WooCommerce provides you with a clear-c
 Author: Qode Interactive
 Author URI: https://qodeinteractive.com/
 Plugin URI: https://qodeinteractive.com/qode-variation-swatches-for-woocommerce/
-Version: 1.0.7
+Version: 1.0.8
 Requires at least: 6.3
 Requires PHP: 7.4
 WC requires at least: 7.6
-WC tested up to: 9.5
+WC tested up to: 9.8
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: qode-variation-swatches-for-woocommerce
@@ -32,16 +32,15 @@ if ( ! class_exists( 'Qode_Variation_Swatches_For_WooCommerce' ) ) {
 			require_once __DIR__ . '/constants.php';
 			require_once QODE_VARIATION_SWATCHES_FOR_WOOCOMMERCE_ABS_PATH . '/helpers/helper.php';
 
-			// Include framework file.
+			// Include a framework file.
 			require_once QODE_VARIATION_SWATCHES_FOR_WOOCOMMERCE_ADMIN_PATH . '/class-qode-variation-swatches-for-woocommerce-framework.php';
 
 			// Check if WooCommerce is installed.
 			if ( function_exists( 'WC' ) ) {
+				// Make plugin available for translation.
+				add_action( 'init', array( $this, 'load_plugin_text_domain' ) );
 
-				// Make plugin available for translation (permission 15 is set in order to be after the plugin initialization).
-				add_action( 'plugins_loaded', array( $this, 'load_plugin_text_domain' ), 15 );
-
-				// Add plugin's body classes.
+				// Add the plugin's body classes.
 				add_filter( 'body_class', array( $this, 'add_body_classes' ) );
 
 				// Enqueue plugin's assets.
@@ -58,7 +57,7 @@ if ( ! class_exists( 'Qode_Variation_Swatches_For_WooCommerce' ) ) {
 		}
 
 		/**
-		 * Instance of module class
+		 * Instance a module class
 		 *
 		 * @return Qode_Variation_Swatches_For_WooCommerce
 		 */
@@ -126,14 +125,14 @@ if ( ! class_exists( 'Qode_Variation_Swatches_For_WooCommerce' ) ) {
 		}
 
 		public function include_modules() {
-			// Hook to include additional element before modules inclusion.
+			// Hook to include an additional element before module inclusion.
 			do_action( 'qode_variation_swatches_for_woocommerce_action_before_include_modules' );
 
 			foreach ( glob( QODE_VARIATION_SWATCHES_FOR_WOOCOMMERCE_INC_PATH . '/*/include.php' ) as $module ) {
 				include_once $module;
 			}
 
-			// Hook to include additional element after modules inclusion.
+			// Hook to include an additional element after module inclusion.
 			do_action( 'qode_variation_swatches_for_woocommerce_action_after_include_modules' );
 		}
 	}
@@ -164,7 +163,7 @@ if ( ! function_exists( 'qode_variation_swatches_for_woocommerce_activation_trig
 
 if ( ! function_exists( 'qode_variation_swatches_for_woocommerce_deactivation_trigger' ) ) {
 	/**
-	 * Function that trigger hooks on plugin deactivation
+	 * Function that triggers hooks on plugin deactivation
 	 */
 	function qode_variation_swatches_for_woocommerce_deactivation_trigger() {
 		// Hook to add additional code on plugin deactivation.
@@ -176,7 +175,7 @@ if ( ! function_exists( 'qode_variation_swatches_for_woocommerce_deactivation_tr
 
 if ( ! function_exists( 'qode_variation_swatches_for_woocommerce_check_requirements' ) ) {
 	/**
-	 * Function that check plugin requirements
+	 * Function that checks plugin requirements
 	 */
 	function qode_variation_swatches_for_woocommerce_check_requirements() {
 		if ( ! function_exists( 'WC' ) ) {
@@ -189,7 +188,7 @@ if ( ! function_exists( 'qode_variation_swatches_for_woocommerce_check_requireme
 
 if ( ! function_exists( 'qode_variation_swatches_for_woocommerce_admin_notice_content' ) ) {
 	/**
-	 * Function that display the error message if the requirements are not met
+	 * Function that displays the error message if the requirements are not met
 	 */
 	function qode_variation_swatches_for_woocommerce_admin_notice_content() {
 		printf( '<div class="notice notice-error"><p>%s</p></div>', esc_html__( 'WooCommerce plugin is required for QODE Variation Swatches for WooCommerce plugin to work properly. Please install/activate it first.', 'qode-variation-swatches-for-woocommerce' ) );
