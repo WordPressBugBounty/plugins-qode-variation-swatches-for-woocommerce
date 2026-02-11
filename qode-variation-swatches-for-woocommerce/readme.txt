@@ -2,7 +2,7 @@
 Contributors: qodeinteractive
 Tags: variations, variation swatches, woocommerce variations, color variations, product variations
 Requires at least: 6.3
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 1.0.8
 License: GPLv3
